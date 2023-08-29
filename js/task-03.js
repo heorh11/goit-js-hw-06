@@ -13,11 +13,17 @@ const images = [
   },
 ];
 const gallery = document.querySelector('.gallery')
-images.forEach(image => {
-  const imageContainer = document.createElement('li')
-  imageContainer.classList.add('gallery-item');
-  imageContainer.innerHTML = `<img src="${image.url}" alt="${image.alt}" class="gallery-image" >`
+// images.forEach(image => {
+//   const imageContainer = document.createElement('li')
+//   imageContainer.classList.add('gallery-item');
+//   imageContainer.innerHTML = `<img src="${image.url}" alt="${image.alt}" class="gallery-image" >`
 
-  console.log(imageContainer)
-  gallery.append(imageContainer)
-})
+//   console.log(imageContainer)
+//   gallery.append(imageContainer)
+// })
+const imagesMarkup = images.map(image =>
+  `<li> 
+ <img src="${image.url}" alt="${image.alt}" class="gallery-image" > 
+ </li>`
+).join('')
+ gallery.innerHTML = imagesMarkup;
